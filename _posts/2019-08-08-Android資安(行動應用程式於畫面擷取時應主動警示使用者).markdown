@@ -20,7 +20,7 @@ this.window.setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.Layou
 this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE,WindowManager.LayoutParams.FLAG_SECURE);
 {% endhighlight %}
 
-**Xamarin Android寫法**  
+**C# Xamarin Android寫法**  
 再OnCreate加入
 {% highlight ruby %}
 Window.SetFlags(WindowManagerFlags.Secure, WindowManagerFlags.Secure);

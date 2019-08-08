@@ -6,7 +6,7 @@ categories: jekyll update
 ---
 今年1月份因為客戶的公司資安政策要求,所以許多APP的案子都被要求要加入檢測行動裝置是否被ROOT＆JailBreak(越獄),防止APP有個資外流的風險。  
 
-**Xamarin Android寫法**  
+**C# Xamarin Android寫法**  
 {% highlight ruby %}
 public static bool CheckRoot()  
 {  
