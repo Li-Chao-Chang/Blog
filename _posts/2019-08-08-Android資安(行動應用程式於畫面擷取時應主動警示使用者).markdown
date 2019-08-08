@@ -10,7 +10,7 @@ categories: jekyll update
 再OnCreate加入
 
 {% highlight ruby %}
-this.window.setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE)
+this.window.setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE);
 {% endhighlight %}
 
 **Java寫法**  
@@ -27,9 +27,9 @@ Window.SetFlags(WindowManagerFlags.Secure, WindowManagerFlags.Secure);
 {% endhighlight %}
 
 加入程式碼之後呈現的效果如下圖  
-![禁止截圖提示](images/201908081255/Android01.jpg)  
+![禁止截圖提示](https://raw.githubusercontent.com/Li-Chao-Chang/Blog/master/_posts/images/201908081255/Android01.jpg)  
 
-![背景狀態畫面](images/201908081255/Android02.jpg)
+![背景狀態畫面](https://raw.githubusercontent.com/Li-Chao-Chang/Blog/master/_posts/images/201908081255/Android02.jpg)
 
 [jekyll-docs]: https://jekyllrb.com/docs/home
 [jekyll-gh]:   https://github.com/jekyll/jekyll
