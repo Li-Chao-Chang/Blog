@@ -8,18 +8,18 @@ categories: jekyll update
 
 **Xamarin Android寫法**  
 {% highlight ruby %}
-public static bool CheckRoot()   
-{   
-    List<string> pathList = new List<string>   
-    {   
-      "/sbin",   
-      "/system/bin",   
-      "/system/xbin",   
-      "/data/local/xbin",   
-      "/data/local/bin",   
-      "/system/sd/xbin",   
-      "/system/bin/failsafe",   
-      "/data/local"   
+public static bool CheckRoot()  
+{  
+    List<string> pathList = new List<string>  
+    {  
+      "/sbin",  
+      "/system/bin",  
+      "/system/xbin",  
+      "/data/local/xbin",  
+      "/data/local/bin",  
+      "/system/sd/xbin",  
+      "/system/bin/failsafe",  
+      "/data/local"  
     };
     try 
     {
@@ -36,7 +36,7 @@ public static bool CheckRoot() 
     {
         return false;
     }
-    return false;           
+    return false;          
 }
 {% endhighlight %}  
 
