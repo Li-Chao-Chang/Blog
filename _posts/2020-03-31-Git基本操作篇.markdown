@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Git Cheat Sheet操作篇"
+title:  "Git Cheat Sheet基本操作篇"
 date:   2020-03-31 15:25:21 +0800
 categories: jekyll update
 ---
