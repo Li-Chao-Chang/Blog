@@ -86,6 +86,12 @@ Git Fetch
 git fetch
 {% endhighlight %} 
 
+Git Check Out
+- 將HEAD移動至指定Commit ID  
+{% highlight ruby %}
+git checkout Commit ID
+{% endhighlight %} 
+
 [jekyll-docs]: https://jekyllrb.com/docs/home
 [jekyll-gh]:   https://github.com/jekyll/jekyll
 [jekyll-talk]: https://talk.jekyllrb.com/
