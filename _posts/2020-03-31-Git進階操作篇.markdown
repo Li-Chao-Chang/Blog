@@ -1,0 +1,121 @@
+---
+layout: post
+title:  "Git Cheat Sheet進階操作篇"
+date:   2020-03-31 16:25:21 +0800
+categories: jekyll update
+---
+Git tag
+- 輕量型標籤  
+{% highlight ruby %}
+git tag 標籤名稱 Commit ID
+#或是
+git tag 標籤名稱 HEAD
+{% endhighlight %}
+- 附註說明標籤
+{% highlight ruby %}
+#-a代表使用附註型tag,-m代表所要登打的說明
+git tag 標籤名稱 Commit ID -a -m "附註內容xxx"
+{% endhighlight %}
+- 顯示tag資訊  
+{% highlight ruby %}
+git show 標籤名稱
+{% endhighlight %}
+
+Git Diff
+- HEAD與Commit ID比對檔案內容差異  
+{% highlight ruby %}
+git diff Commit ID
+{% endhighlight %}
+- 列出差異檔案名稱  
+{% highlight ruby %}
+git diff Commit ID --name-only
+{% endhighlight %}
+- 兩個Commit ID比較差異  
+{% highlight ruby %}
+git diff Commit ID Commit ID
+{% endhighlight %}
+- 將填入兩個Commit ID將差異Output至test.txt存檔至HEAD目錄  
+{% highlight ruby %}
+git diff a123d31 be94t76 --name-only > test.txt
+{% endhighlight %}
+- 將填入兩個Commit ID,產出異動檔案,並壓縮成files.tar  
+{% highlight ruby %}
+git archive --output=files.tar HEAD $(git diff a123d31 be94t76 --name-only --diff-filter=ACMRT HEAD) 
+{% endhighlight %}
+- 將HEAD裡的全部檔案壓縮成files.tar  
+{% highlight ruby %}
+git archive --output=files.tar HEAD $(git diff-tree -r --no-commit-id --name-only --diff-filter=ACMRT HEAD)
+{% endhighlight %}
+
+Git branch  
+- 列出分支  
+{% highlight ruby %}
+git branch
+{% endhighlight %}
+- 建立分支  
+{% highlight ruby %}
+git branch 名字
+{% endhighlight %}
+- 分支改名  
+{% highlight ruby %}
+git branch -m 名字 新名字
+{% endhighlight %}
+- 刪除分支  
+{% highlight ruby %}
+#-d會跳出詢問是否刪除
+git branch -d 名字
+#強制刪除 -D
+git branch -D 名字
+{% endhighlight %}
+- 切換到分支  
+{% highlight ruby %}
+git checkout 名字
+#加入-b參數,如果分支不存在則建立在自動切換
+git checkout -b 名字
+{% endhighlight %}
+
+Git Cherry Pick
+- 將其他Commit ID的節點複製過來  
+{% highlight ruby %}
+#先查詢log取得CommitID
+git log --oneline
+#如果要查特定分支上的Commit ID
+git log --oneline Branch名稱
+#下一步
+#開始pick
+git cherry-pick CommitID_1
+#可多個pick
+git cherry-pick CommitID_1 CommitID_2 CommitID_3
+{% endhighlight %}
+
+Git Merge
+- 合併
+{% highlight ruby %}
+git merge branch名字
+#之後會進入vi編輯畫面
+#輸入:wq Enter離開
+{% endhighlight %}
+- 取消合併
+{% highlight ruby %}
+git reset HEAD^ --hard
+{% endhighlight %}
+
+Git Rebase
+- 另一種合併
+{% highlight ruby %}
+#rebase cat
+git rebase cat
+{% endhighlight %}   
+![圖片](https://github.com/Li-Chao-Chang/Blog/raw/master/_posts/images/201908081255/ui_rebase.jpg)
+- 取消rebase合併  
+{% highlight ruby %}
+#先查詢reflog取得commit ID
+git reflog
+#執行還原rebase
+git reset 1841e7c --hard
+{% endhighlight %}  
+![圖片](https://github.com/Li-Chao-Chang/Blog/raw/master/_posts/images/201908081255/cmd_rebase.jpg) 
+
+[jekyll-docs]: https://jekyllrb.com/docs/home
+[jekyll-gh]:   https://github.com/jekyll/jekyll
+[jekyll-talk]: https://talk.jekyllrb.com/
