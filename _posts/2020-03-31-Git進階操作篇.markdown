@@ -106,7 +106,9 @@ Git Rebase
 #rebase cat
 git rebase cat
 {% endhighlight %}  
+合併前
 ![圖片](https://github.com/Li-Chao-Chang/Blog/raw/master/_posts/images/201908081255/node_rebase.jpg)   
+合併後
 ![圖片](https://github.com/Li-Chao-Chang/Blog/raw/master/_posts/images/201908081255/ui_rebase.jpg)
 - 取消rebase合併  
 {% highlight ruby %}
