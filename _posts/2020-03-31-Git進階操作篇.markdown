@@ -117,7 +117,19 @@ git reflog
 #執行還原rebase
 git reset 1841e7c --hard
 {% endhighlight %}  
-![圖片](https://github.com/Li-Chao-Chang/Blog/raw/master/_posts/images/201908081255/cmd_rebase.jpg) 
+![圖片](https://github.com/Li-Chao-Chang/Blog/raw/master/_posts/images/201908081255/cmd_rebase.jpg)  
+
+Git 復原被刪除的Commit
+- 先查詢要還原到的Commit ID  
+{% highlight ruby %}
+git reflog
+{% endhighlight %}  
+![圖片](https://github.com/Li-Chao-Chang/Blog/raw/master/_posts/images/201908081255/cmd_resetDelete.jpg) 
+- Reset Commit  
+{% highlight ruby %}
+git reset 57d08ad --hard
+{% endhighlight %}  
+![圖片](https://github.com/Li-Chao-Chang/Blog/raw/master/_posts/images/201908081255/ui_resetDelete.jpg)  
 
 [jekyll-docs]: https://jekyllrb.com/docs/home
 [jekyll-gh]:   https://github.com/jekyll/jekyll
