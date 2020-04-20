@@ -49,8 +49,8 @@ new Thread(new Runnable(){
 第一次執行憑證綁定失敗如下圖  
 ![圖片1](https://github.com/Li-Chao-Chang/Blog/raw/master/_posts/images/20200420/androidCerPic.jpg)  
 
-AndroidStudio(Java)
-[專案檔下載](https://github.com/Li-Chao-Chang/AndroidCertificatePinner)  
+AndroidStudio(Java)  
+[專案檔下載](https://github.com/Li-Chao-Chang/AndroidCertificatePinner)
 
 [jekyll-docs]: https://jekyllrb.com/docs/home
 [jekyll-gh]:   https://github.com/jekyll/jekyll
