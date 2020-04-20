@@ -50,7 +50,7 @@ new Thread(new Runnable(){
 ![圖片1](https://github.com/Li-Chao-Chang/Blog/raw/master/_posts/images/20200420/androidCerPic.jpg)  
 
 ＭainActivity.java下載  
-![程式碼](https://github.com/Li-Chao-Chang/Blog/raw/master/_posts/images/20200420/ＭainActivity.java)  
+[程式碼](https://github.com/Li-Chao-Chang/Blog/raw/master/_posts/images/20200420/ＭainActivity.java.zip)  
 
 [jekyll-docs]: https://jekyllrb.com/docs/home
 [jekyll-gh]:   https://github.com/jekyll/jekyll
