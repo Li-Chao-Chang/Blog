@@ -16,6 +16,7 @@ categories: jekyll update
 + [CheckOut](#8)
 + [Tag](#9)
 + [Branch](#10) 
++ [Log](#11) 
 
 ---
 <font color="#0473E2" id='1'>Git Status</font> 
@@ -149,6 +150,24 @@ git branch -D 名字
 git checkout 名字
 #加入-b參數,如果分支不存在則建立在自動切換
 git checkout -b 名字
+{% endhighlight %}
+
+<font color="#0473E2" id='11'>Git Log</font>  
+ - Log  
+{% highlight ruby %}
+git log
+{% endhighlight %}
+- 找尋特定作者  
+{% highlight ruby %}
+git log --oneline --author="IvanLi"
+{% endhighlight %}
+- 找尋特定Commmit文字
+{% highlight ruby %}
+git log --oneline --grep="test"
+{% endhighlight %}
+- 找尋特定的檔案編輯紀錄  
+{% highlight ruby %}
+git log xxxxx.cs
 {% endhighlight %}
 
 [jekyll-docs]: https://jekyllrb.com/docs/home
