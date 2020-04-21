@@ -7,6 +7,9 @@ categories: jekyll update
 <font color="#0473E2" id='1'>Android憑證綁定(Java)</font>  
 - 第一種方式,利用okHttp取得憑證得SHA256來進行憑證驗證   
 {% highlight ruby %}
+//於AndroidManiFest加入網路權限
+<uses-permission android:name="android.permission.INTERNET"/>
+
 //於build.gradle新增okhttp
 implementation 'com.squareup.okhttp3:okhttp:4.2.0'
 
