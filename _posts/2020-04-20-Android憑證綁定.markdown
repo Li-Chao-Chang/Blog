@@ -5,7 +5,7 @@ date:   2020-04-20 16:08:21 +0800
 categories: jekyll update
 ---
 <font color="#0473E2" id='1'>Android憑證綁定(Java)</font>  
-利用okHttp取得憑證得SHA256來進行憑證驗證   
+- 第一種方式,利用okHttp取得憑證得SHA256來進行憑證驗證   
 {% highlight ruby %}
 //於build.gradle新增okhttp
 implementation 'com.squareup.okhttp3:okhttp:4.2.0'
@@ -46,8 +46,40 @@ new Thread(new Runnable(){
     }
 }).start();
 {% endhighlight %}   
-第一次執行憑證綁定失敗如下圖  
+- 第一次執行憑證綁定失敗如下圖,藉由Exception獲得正確的SHA256
 ![圖片1](https://github.com/Li-Chao-Chang/Blog/raw/master/_posts/images/20200420/androidCerPic.jpg)  
+
+- 第二種方式,利用實體憑證檔(cer,der,pem,crt)來取得SHA256,取得後再利用OkHttp進行憑證驗證
+{% highlight ruby %}
+public class OutputCerKey {
+
+    public static String GetSHA256(InputStream certFileInputSteam){
+
+        try{
+            X509Certificate x509Certificate = (X509Certificate) CertificateFactory.getInstance("X509")
+                    .generateCertificate(certFileInputSteam);
+            byte[] publicKeyEncoded = x509Certificate.getPublicKey().getEncoded();
+            MessageDigest messageDigest = MessageDigest.getInstance("SHA-256");
+            byte[] publicKeySha256 = messageDigest.digest(publicKeyEncoded);
+            //Base64.getEncoder() Android26以上
+            byte[] publicKeyShaBase64 = Base64.getEncoder().encode(publicKeySha256);
+            String Sha256key = "sha256/" + new String(publicKeyShaBase64);
+            return Sha256key;
+        }catch (Exception e){
+            e.printStackTrace();
+        } finally {
+            try {
+                if (certFileInputSteam != null) {
+                    certFileInputSteam.close();
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return "";
+    }
+}
+{% endhighlight %} 
 
 AndroidStudio(Java)  
 [專案檔下載](https://github.com/Li-Chao-Chang/AndroidCertificatePinner)
